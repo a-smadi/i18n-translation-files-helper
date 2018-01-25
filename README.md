@@ -1,4 +1,4 @@
-+[![Code Climate](https://codeclimate.com/github/a-smadi/i18n-translation-files-helper.png)](https://codeclimate.com/github/a-smadi/i18n-translation-files-helper)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d0d09bd3a7fca784b038/maintainability)](https://codeclimate.com/github/a-smadi/i18n-translation-files-helper/maintainability)
 
 # i18n-translation-files-helper
 
