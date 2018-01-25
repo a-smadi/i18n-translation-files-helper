@@ -1,3 +1,5 @@
++[![Code Climate](https://codeclimate.com/github/a-smadi/i18n-translation-files-helper.png)](https://codeclimate.com/github/a-smadi/i18n-translation-files-helper)
+
 # i18n-translation-files-helper
 
 rake tasks to make adding translations faster
