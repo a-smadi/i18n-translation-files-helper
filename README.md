@@ -2,7 +2,7 @@
 
 # i18n-translation-files-helper
 
-rake tasks to make adding translations faster
+rake tasks to better manage i18n translation files within Ruby on Rails projects.
 
 ## Installing
 
