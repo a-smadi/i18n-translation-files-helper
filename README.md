@@ -18,10 +18,11 @@ PS: The key can be in snake_case or CamelCase.
 ```
 rake add_t hello_world "Hello, World!"
 ```
-or
+and
 ```
 rake add_t HelloWorld "Hello, World!"
 ```
+are both acceptable.
 
 ## Limitations
 
