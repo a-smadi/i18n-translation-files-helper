@@ -22,3 +22,7 @@ or
 ```
 rake add_t HelloWorld "Hello, World!"
 ```
+
+## Limitations
+
+This project was created with support for English and Arabic languages only.
