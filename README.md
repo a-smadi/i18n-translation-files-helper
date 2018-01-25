@@ -2,7 +2,7 @@
 
 rake tasks to make adding translations faster
 
-### Installing
+## Installing
 
 as these are rake tasks, installation is pretty straight forward.
 Add this directory to `lib/tasks` on your existing Rails project.
