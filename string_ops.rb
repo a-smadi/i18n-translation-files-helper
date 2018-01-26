@@ -16,6 +16,35 @@ class StringOps
   private_class_method
 
   def self.letters_only(text)
-    text.gsub(/[^0-9A-Za-z]/, '').tr('0-9', '').strip.downcase
+    text.tr('0-9', '')
+        .tr('!', '')
+        .tr('?', '')
+        .tr('@', '')
+        .tr('#', '')
+        .tr('$', '')
+        .tr('%', '')
+        .tr('^', '')
+        .tr('&', '')
+        .tr('*', '')
+        .tr('(', '')
+        .tr(')', '')
+        .tr('[', '')
+        .tr(']', '')
+        .tr('{', '')
+        .tr('}', '')
+        .tr(':', '')
+        .tr(';', '')
+        .tr('\'', '')
+        .tr('"', '')
+        .tr('`', '')
+        .tr('\\', '')
+        .tr('/', '')
+        .tr('<', '')
+        .tr('>', '')
+        .tr('.', '')
+        .tr(',', '')
+        .tr('|', '')
+        .tr(' ', '')
+        .strip.downcase
   end
 end
