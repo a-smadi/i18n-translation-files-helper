@@ -26,13 +26,13 @@ rake add_t HelloWorld "Hello, World!"
 ```
 are both acceptable.
 
-Also, adding both translations for the same key at once is also possible, as such:
+
+Also, adding both translations for the same key at once is possible, as such:
 
 ```
 rake add_t hello_world "Hello, World!" "مرحبا"
 ```
-PS: precednece of values doesn't have any effect, as long as the key comes first.
-so
+PS: precednece of values doesn't have any effect, as long as the key comes first, so
 ```
 rake add_t hello_world "مرحبا" "Hello, World!"
 ```
