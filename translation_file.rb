@@ -27,8 +27,9 @@ class TranslationFile
   def add(row, position, key)
     open(@filename, 'r+') do |file|
       position.times { file.readline }
+      prev = file.pos
       current_key = file.readline
-      prev = pos = file.pos
+      pos = file.pos
       while skip_this_line?(key, current_key.strip)
         prev = pos
         current_key = file.readline
