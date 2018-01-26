@@ -4,17 +4,22 @@ require "#{Rails.root}/lib/tasks/i18n-translation-files-helper/translation_recor
 
 task add_t: :environment do
   ARGV.each { |arg| task arg.to_sym }
-  t_record = TranslationRecord.new(ARGV[1], ARGV[2])
 
-  abort('invalid key,value pair !') unless t_record.valid?
+  [ARGV[2], ARGV[3]].each do |value|
+    next unless value.present?
 
-  t_file = TranslationFile.new(TranslationFile.suitable_t_file(t_record.value))
+    record = TranslationRecord.new(ARGV[1], value)
 
-  abort('translation file does not exist !') unless t_file.exists?
+    abort('invalid key,value pair !') unless record.valid?
 
-  position = t_file.find("# #{t_record.key.slice(0).upcase} #") + 1
+    t_file = TranslationFile.new(TranslationFile.suitable_t_file(record.value))
 
-  abort('translation file is not properly formatted !') unless position.positive?
+    abort('translation file does not exist !') unless t_file.exists?
 
-  t_file.add(t_record.as_row, position, t_record.key)
+    position = t_file.find("# #{record.key.slice(0).upcase} #") + 1
+
+    abort('translation file is not properly formatted !') unless position.positive?
+
+    t_file.add(record.as_row, position, record.key)
+  end
 end
