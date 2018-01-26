@@ -28,12 +28,16 @@ class TranslationFile
     open(@filename, 'r+') do |file|
       position.times { file.readline }
       current_key = file.readline
-      current_key = file.readline while skip_this_line?(key, current_key.strip)
-      pos = file.pos
+      prev = pos = file.pos
+      while skip_this_line?(key, current_key.strip)
+        prev = pos
+        current_key = file.readline
+        pos = file.pos
+      end
+      file.seek(prev)
       remainder = file.read
-      file.seek(pos)
-      file.write("#{row}\n")
-      file.write(remainder)
+      file.seek(prev)
+      file.write("#{row}\n" + remainder)
     end
   end
 
@@ -44,6 +48,7 @@ class TranslationFile
   private
 
   def skip_this_line?(key, current_key)
+    return false if current_key.start_with?('#')
     key == [key, current_key.downcase].sort_by! { |text| text }.last
   end
 end
