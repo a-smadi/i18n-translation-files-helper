@@ -23,10 +23,15 @@ class TranslationRecord
   def clean
     @key = @key.to_s.strip
     @value = @value.to_s.strip
+    @value = "'#{@value}'" if !@value.start_with?('\'') && value_has_variable?
   end
 
   def prepare_key
     @key = (@key[1..-1]).strip if @key.start_with?(':')
     @key = StringOps.underscore(@key)
+  end
+
+  def value_has_variable?
+    @value.include?('%{') && (@value.index('}', @value.index('%{')) || -1).positive?
   end
 end
