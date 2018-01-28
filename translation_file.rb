@@ -46,6 +46,10 @@ class TranslationFile
     T_FILES_ROOT + (StringOps.english?(text) ? EN_FILE : AR_FILE)
   end
 
+  def self.translation_filename(locale)
+    locale == 'EN' ? T_FILES_ROOT + EN_FILE : T_FILES_ROOT + AR_FILE
+  end
+
   private
 
   def skip_this_line?(key, current_key)
