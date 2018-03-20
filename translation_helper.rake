@@ -14,7 +14,7 @@ end
 
 def add_values_from_input
   %w[EN AR].each do |locale|
-    print "#{locale} for #{ARGV[1]} (empty to add skip) : "
+    print "#{locale} for #{ARGV[1]} (empty to skip) : "
     value = STDIN.gets
 
     record = TranslationRecord.new(ARGV[1], value)
