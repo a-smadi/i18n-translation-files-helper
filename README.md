@@ -38,6 +38,13 @@ rake add_t hello_world "مرحبا" "Hello, World!"
 ```
 is also acceptable.
 
+In addition, adding translations as input after running the task is possible as follows: (especially useful when adding translations with special characters)
+
+```
+rake add_t hello_world
+```
+and the user will be prompted to enter translations for that key after running the task.
+
 ## Limitations
 
 This project was created with support for English and Arabic languages only.
