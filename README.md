@@ -2,6 +2,12 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/d0d09bd3a7fca784b038/maintainability)](https://codeclimate.com/github/a-smadi/i18n-translation-files-helper/maintainability)
 
+## Discontinued Project
+
+I've discontinued working on this rake task, as i've moved its functionality to the `i18n-magic` gem.
+
+## About
+
 rake tasks to better manage i18n translation files within Ruby on Rails projects.
 
 ## Installing
